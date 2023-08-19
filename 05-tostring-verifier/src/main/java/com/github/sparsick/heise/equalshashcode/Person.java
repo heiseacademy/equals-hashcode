@@ -8,10 +8,13 @@ public class Person {
     private String lastName;
     private String jobTitle;
 
-    public Person(String firstName, String lastName, String jobTitle) {
+    private String location;
+
+    public Person(String firstName, String lastName, String jobTitle, String location) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.jobTitle = jobTitle;
+        this.location = location;
     }
 
     public String getFirstName() {
@@ -38,6 +41,13 @@ public class Person {
         this.jobTitle = jobTitle;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
     @Override
     public String toString() {
@@ -45,6 +55,7 @@ public class Person {
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", jobTitle='" + jobTitle + '\'' +
+                ", location='" + location + '\'' +
                 '}';
     }
 }
