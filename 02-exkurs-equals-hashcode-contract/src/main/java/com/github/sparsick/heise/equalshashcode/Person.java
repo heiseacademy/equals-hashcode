@@ -1,5 +1,7 @@
 package com.github.sparsick.heise.equalshashcode;
 
+import java.util.Objects;
+
 public class Person {
 
     private String firstName;
@@ -36,5 +38,15 @@ public class Person {
         this.jobTitle = jobTitle;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Person person)) return false;
+        return Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName) && Objects.equals(jobTitle, person.jobTitle);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName, jobTitle);
+    }
 }
